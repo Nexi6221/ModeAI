@@ -16,7 +16,17 @@ jobs:
 
       - name: Extract project ZIP
         run: |
-          unzip -q "ModelAI-fixed.zip" -d extracted
+          ZIP=$(find . -type f -iname "ModelAI-fixed.zip" | head -n 1)
+
+if [ -z "$ZIP" ]; then
+  echo "ERROR: ModelAI-fixed.zip was not found"
+  echo "Files in repository:"
+  find . -maxdepth 3 -type f | head -100
+  exit 1
+fi
+
+echo "Found ZIP: $ZIP"
+unzip -q "$ZIP" -d extracted
           echo "ZIP extracted"
           find extracted -maxdepth 4 -type f -name gradlew -print
 
