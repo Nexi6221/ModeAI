@@ -1,0 +1,7 @@
+{
+  "name": "StyleAI",
+  "description": "AI-powered personal fashion stylist for outfit analysis, smart recommendations, wardrobe combination, and style discovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
